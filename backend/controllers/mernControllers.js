@@ -45,3 +45,12 @@ export const UpdatePerson = (req, res) => {
     }
   );
 };
+
+export const deletePerson = (req, res) => {
+  Person.remove({ _id: req.params.PersonId }, (err, Person) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json({ message: "Delete successful" });
+  });
+};
