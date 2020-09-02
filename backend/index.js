@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyparser from "body-parser";
+import routes from "./routes/mernRoutes";
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +19,10 @@ mongoose.connect("mongodb://localhost/mern", {
 //body parser set up
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+
+//passing express app..
+//basically we using whats in mernRountes, and thats whats available
+routes(app);
 
 app.get("/", (req, res) => {
   res.send(`Our MERN app is running on port: ${PORT}`);

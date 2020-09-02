@@ -1,6 +1,6 @@
-import monngoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const Schema = Mongoose.Schema;
+const Schema = mongoose.Schema;
 
 export const MernSchema = new Schema({
   firstName: {
